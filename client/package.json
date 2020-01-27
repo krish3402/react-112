@@ -13,7 +13,7 @@
     "build:clean": "rimraf ./public/dist && webpack --config webpack.config.js",
     "build:prod": "rimraf ./public/dist && NODE_ENV=production webpack --config webpack.config.prod.js",
     "start": "webpack",
-    "test": "jest --coverage --coverageDirectory=client/coverage/jest"
+    "test": "jest --coverage --coverageDirectory=client/coverage/"
   },
   "author": "Nils Hartmann",
   "license": "ISC",
