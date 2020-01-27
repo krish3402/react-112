@@ -64,11 +64,7 @@
       "text",
       "cobertura"
     ],
-    "reporters": [
-      "default",
-      "jest-junit"
-    ],    
-    "scriptPreprocessor": "./node_modules/ts-jest/preprocessor.js",
+     "scriptPreprocessor": "./node_modules/ts-jest/preprocessor.js",
     "testRegex": "(/__tests__/.*\\.(test|spec))\\.(ts|tsx|js)$",
     "moduleFileExtensions": [
       "ts",
@@ -76,9 +72,5 @@
       "js"
     ],
     "testResultsProcessor": "./node_modules/jest-junit-reporter"
-  },
-  "jest-junit": {
-    "output": "client/coverage/junit/junit.xml",
-    "usePathForSuiteName": "true"
   }
-}
+  }
