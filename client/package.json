@@ -74,7 +74,8 @@
       "ts",
       "tsx",
       "js"
-    ]
+    ],
+    "testResultsProcessor": "./node_modules/jest-junit-reporter"
   },
   "jest-junit": {
     "output": "client/coverage/junit/junit.xml",
