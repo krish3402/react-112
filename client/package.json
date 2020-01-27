@@ -64,6 +64,10 @@
       "text",
       "cobertura"
     ],
+    "reporters": [
+      "default",
+      "jest-junit"
+    ],    
     "scriptPreprocessor": "./node_modules/ts-jest/preprocessor.js",
     "testRegex": "(/__tests__/.*\\.(test|spec))\\.(ts|tsx|js)$",
     "moduleFileExtensions": [
