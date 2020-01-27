@@ -75,5 +75,9 @@
       "tsx",
       "js"
     ]
+  },
+  "jest-junit": {
+    "output": "output/coverage/junit/junit.xml",
+    "usePathForSuiteName": "true"
   }
 }
