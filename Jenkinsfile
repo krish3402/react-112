@@ -12,13 +12,7 @@ pipeline {
         stage('Node & Npm Install') {
           steps {
             script {
-              stage ('Node & npm Install') {
-                steps {
-                  sh label: '', script: 'sudo apt-get install nodejs -y'
-                  sh label: '', script: 'sudo apt-get install npm -y'
-
-                }
-              }
+              sudo apt-get install nodejs -y && sudo apt-get install npm -y
             }
 
           }
