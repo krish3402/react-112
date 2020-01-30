@@ -32,7 +32,7 @@ pipeline {
       }
     }
 
-    stage('error') {
+    stage('-----') {
       steps {
         echo 'Space'
       }
@@ -52,14 +52,26 @@ pipeline {
           }
         }
 
-        stage('Maven Build & Coverage and Test report') {
+        stage('Maven Build ') {
           steps {
-            sh 'mvn clean install'
-            cobertura(enableNewApi: true, sourceEncoding: 'ASCII', coberturaReportFile: 'target/site/cobertura/coverage.xml', lineCoverageTargets: '80, 0, 0', methodCoverageTargets: '80, 0, 0', conditionalCoverageTargets: '70, 0, 0')
+            sh 'mvn clean install cobertura:cobertura'
+          }
+        }
+
+        stage('Maven Coverage & Test Report') {
+          steps {
+            sh 'mvn clean test cobertura:cobertura'
+            cobertura(enableNewApi: true, coberturaReportFile: 'target/site/cobertura/coverage.xml', conditionalCoverageTargets: '70, 0, 0', classCoverageTargets: '70, 0, 0', lineCoverageTargets: '80, 0, 0', methodCoverageTargets: '80, 0, 0', sourceEncoding: 'ASCII')
             junit '**/surefire-reports/*.xml'
           }
         }
 
+      }
+    }
+
+    stage('End') {
+      steps {
+        echo 'End'
       }
     }
 
