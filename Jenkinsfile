@@ -29,7 +29,7 @@ pipeline {
 
         stage('Coverage Report') {
           steps {
-            cobertura(autoUpdateHealth: true, autoUpdateStability: true, coberturaReportFile: 'client/coverage/cobertura-coverage.xml', enableNewApi: true, zoomCoverageChart: true)
+            cobertura(coberturaReportFile: 'cobertura-coverage.xml', enableNewApi: true, zoomCoverageChart: true, conditionalCoverageTargets: 'client/coverage')
           }
         }
 
