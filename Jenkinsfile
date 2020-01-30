@@ -11,8 +11,7 @@ pipeline {
 
         stage('Node & Npm Install') {
           steps {
-            sh '''sudo apt-get install nodejs -y
-sudo apt-get install npm -y'''
+            sh 'sudo apt-get install nodejs -y && sudo apt-get install npm -y'
           }
         }
 
