@@ -32,7 +32,7 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         echo 'Space'
       }
@@ -60,7 +60,7 @@ pipeline {
 
         stage('Maven Coverage and Test report') {
           steps {
-            sh 'mvn clean test'
+            sh 'mvn clean install'
             cobertura(enableNewApi: true, sourceEncoding: 'ASCII', coberturaReportFile: 'target/site/cobertura/coverage.xml', lineCoverageTargets: '80, 0, 0', methodCoverageTargets: '80, 0, 0', conditionalCoverageTargets: '70, 0, 0')
             junit '**/surefire-reports/*.xml'
           }
