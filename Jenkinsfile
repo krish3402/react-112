@@ -52,13 +52,7 @@ pipeline {
           }
         }
 
-        stage('Maven Build') {
-          steps {
-            sh 'mvn clean install'
-          }
-        }
-
-        stage('Maven Coverage and Test report') {
+        stage('Maven Build & Coverage and Test report') {
           steps {
             sh 'mvn clean install'
             cobertura(enableNewApi: true, sourceEncoding: 'ASCII', coberturaReportFile: 'target/site/cobertura/coverage.xml', lineCoverageTargets: '80, 0, 0', methodCoverageTargets: '80, 0, 0', conditionalCoverageTargets: '70, 0, 0')
