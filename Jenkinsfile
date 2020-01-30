@@ -21,9 +21,9 @@ pipeline {
           }
         }
 
-        stage('Npm Code Coverage') {
+        stage('Npm Code Coverage  & Test Report') {
           steps {
-            sh 'cd client && npm test'
+            sh 'cd client && npm install && npm i -D jest-junit-reporter && npm test -- --coverage --watchAll=false'
           }
         }
 
