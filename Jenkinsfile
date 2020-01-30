@@ -23,7 +23,7 @@ pipeline {
 
         stage('Nom Coverage & Test Report') {
           steps {
-            sh 'cd client && npm test -- --coverage --watchAll=false'
+            sh 'cd client && npm install && npm test -- --coverage --watchAll=false'
           }
         }
 
