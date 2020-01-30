@@ -21,6 +21,12 @@ pipeline {
           }
         }
 
+        stage('Npm Code Coverage') {
+          steps {
+            sh 'cd client && npm test'
+          }
+        }
+
       }
     }
 
