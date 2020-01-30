@@ -29,7 +29,7 @@ pipeline {
 
         stage('Coverage Report') {
           steps {
-            cobertura(enableNewApi: true, sourceEncoding: 'ASCII', coberturaReportFile: '/home/ubuntu/.jenkins/workspace/React-pipeline_dev/client/coverage/cobertura-coverage.xml')
+            cobertura(enableNewApi: true, sourceEncoding: 'ASCII', coberturaReportFile: 'cobertura-coverage.xml')
           }
         }
 
