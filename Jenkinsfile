@@ -24,7 +24,7 @@ pipeline {
         stage('Npm Code Coverage  & Test Report') {
           steps {
             sh 'cd client && npm install && npm i -D jest-junit-reporter && npm test -- --coverage --watchAll=false'
-            cobertura(coberturaReportFile: 'client/coverage/cobertura-coverage.xml', sourceEncoding: 'ASCII')
+            cobertura(coberturaReportFile: 'client/coverage/cobertura-coverage.xml', sourceEncoding: 'ASCII', enableNewApi: true)
             junit 'client/*.xml'
           }
         }
