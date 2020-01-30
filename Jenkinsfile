@@ -21,12 +21,6 @@ pipeline {
           }
         }
 
-        stage('Nom Coverage & Test Report') {
-          steps {
-            sh 'cd client && npm i -D jest-junit-reporter && npm test -- --coverage --watchAll=false'
-          }
-        }
-
       }
     }
 
