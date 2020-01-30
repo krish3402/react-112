@@ -29,7 +29,7 @@ pipeline {
 
         stage('Coverage Report') {
           steps {
-            cobertura(coberturaReportFile: 'client/coverage/cobertura-coverage.xml', enableNewApi: true)
+            cobertura(coberturaReportFile: 'client/coverage/cobertura-coverage.xml', enableNewApi: true, sourceEncoding: 'ASCII')
           }
         }
 
