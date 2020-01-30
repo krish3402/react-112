@@ -60,7 +60,8 @@ pipeline {
 
         stage('Maven Coverage & Test Report') {
           steps {
-            cobertura(enableNewApi: true, coberturaReportFile: 'target/site/cobertura/coverage.xml', conditionalCoverageTargets: '70, 0, 0', classCoverageTargets: '70, 0, 0', lineCoverageTargets: '80, 0, 0', methodCoverageTargets: '80, 0, 0', sourceEncoding: 'ASCII')
+            sh 'mvn clean install cobertura:cobertura'
+            cobertura(coberturaReportFile: 'target/site/cobertura/coverage.xml', classCoverageTargets: '80, 0, 0', conditionalCoverageTargets: '80, 0, 0', lineCoverageTargets: '80, 0, 0', methodCoverageTargets: '80, 0, 0', sourceEncoding: 'ASCII', enableNewApi: true)
             junit '**/surefire-reports/*.xml'
           }
         }
