@@ -15,16 +15,10 @@ pipeline {
               sudo apt-get install nodejs -y
             }
 
+            sh 'sudo apt-get install nodejs -y'
           }
         }
 
-      }
-    }
-
-    stage('Back End') {
-      agent any
-      steps {
-        sh 'Back End'
       }
     }
 
