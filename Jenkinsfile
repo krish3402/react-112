@@ -15,6 +15,12 @@ pipeline {
           }
         }
 
+        stage('Npm Packages install') {
+          steps {
+            sh 'cd client && npm install && npm i -D jest-junit-reporter'
+          }
+        }
+
       }
     }
 
