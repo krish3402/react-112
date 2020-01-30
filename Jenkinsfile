@@ -29,7 +29,7 @@ pipeline {
 
         stage('Coverage Report') {
           steps {
-            cobertura(enableNewApi: true, sourceEncoding: 'ASCII', autoUpdateStability: true, autoUpdateHealth: true)
+            cobertura(enableNewApi: true, sourceEncoding: 'ASCII', coberturaReportFile: 'client/coverage/cobertura-coverage.xml')
           }
         }
 
