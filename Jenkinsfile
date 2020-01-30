@@ -32,5 +32,42 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        echo 'Space'
+      }
+    }
+
+    stage('Back End') {
+      parallel {
+        stage('Back End') {
+          steps {
+            echo 'Back End'
+          }
+        }
+
+        stage('Maven Install') {
+          steps {
+            sh 'sudo apt-get install maven -y'
+          }
+        }
+
+        stage('Maven Build') {
+          steps {
+            sh 'mvn clean install'
+          }
+        }
+
+        stage('Maven Coverage and Test report') {
+          steps {
+            sh 'mvn clean test'
+            cobertura(enableNewApi: true, sourceEncoding: 'ASCII', coberturaReportFile: 'target/site/cobertura/coverage.xml', lineCoverageTargets: '80, 0, 0', methodCoverageTargets: '80, 0, 0', conditionalCoverageTargets: '70, 0, 0')
+            junit '**/surefire-reports/*.xml'
+          }
+        }
+
+      }
+    }
+
   }
 }
