@@ -1,1 +1,1 @@
-mvn -Dserver.port=9090 spring-boot:run
+java -jar -Dserver.port=9090 	petclinic.jar
