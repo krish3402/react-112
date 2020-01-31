@@ -1,1 +1,1 @@
-mvn -Dserver.port=9090 spring-boot:run &
+mvn -Dserver.port=9090 spring-boot:run
